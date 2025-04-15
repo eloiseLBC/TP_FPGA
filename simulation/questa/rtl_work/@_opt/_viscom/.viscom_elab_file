@@ -1,0 +1,1 @@
+c:/intelfpga_lite/24.1std/questa_fse/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 15679776 work.tb_half_adder -quiet -auto_acc_if_foreign -work work -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L cyclonev_hssi -L rtl_work -L work +acc -allow_unnamed -o _opt -id 1-86e0c1637e9a-67fe535a-38-744 +__betafsm

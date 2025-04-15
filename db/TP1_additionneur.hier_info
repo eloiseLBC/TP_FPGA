@@ -1,0 +1,26 @@
+|full_adder
+A => half_adder:instance_half_adder1.A
+B => half_adder:instance_half_adder1.B
+Cin => half_adder:instance_half_adder2.B
+S << half_adder:instance_half_adder2.S
+Cout << Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|half_adder:instance_half_adder1
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder|half_adder:instance_half_adder2
+A => S.IN0
+A => C.IN0
+B => S.IN1
+B => C.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
