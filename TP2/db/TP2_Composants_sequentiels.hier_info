@@ -1,0 +1,11 @@
+|flipflop_JKrs
+J => Mux0.IN2
+K => Mux0.IN3
+Clk => Q_reg.CLK
+SETn => Q_reg.IN0
+RSTn => Q_reg.IN1
+RSTn => Q_reg.ACLR
+Q <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= Q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+

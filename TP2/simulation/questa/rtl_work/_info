@@ -1,0 +1,98 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dZ:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/simulation/questa
+Eflipflop_jkrs
+Z1 w1745316852
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/flipflop_JKrs.vhd
+Z6 FZ:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/flipflop_JKrs.vhd
+l0
+L15 1
+Vi:8C>]T>UGKR@<JS@]P450
+!s100 3WomW[5=[YeQNm2AGN:=c0
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1745316977
+!i10b 1
+Z9 !s108 1745316976.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/flipflop_JKrs.vhd|
+Z11 !s107 Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/flipflop_JKrs.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+Z14 DEx4 work 13 flipflop_jkrs 0 22 i:8C>]T>UGKR@<JS@]P450
+!i122 0
+l29
+L27 38
+VdP[TkG3a:UNP4Lh5JBU<T0
+!s100 ]9WQ6F;339a_Q?d06cMLB3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etb_flipflop_jkrs
+Z15 w1745316607
+R2
+R3
+R4
+!i122 1
+R0
+Z16 8Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/tb_flipflop_JKrs.vhd
+Z17 FZ:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/tb_flipflop_JKrs.vhd
+l0
+L5 1
+Va?LMzez3FF3Z_m4[<fGT;0
+!s100 @cFdiOJ>0MGdA0PkI;68I2
+R7
+31
+Z18 !s110 1745316978
+!i10b 1
+Z19 !s108 1745316977.000000
+Z20 !s90 -reportprogress|300|-93|-work|work|Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/tb_flipflop_JKrs.vhd|
+!s107 Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/tb_flipflop_JKrs.vhd|
+!i113 1
+R12
+R13
+Atb
+R14
+R2
+R3
+R4
+DEx4 work 16 tb_flipflop_jkrs 0 22 a?LMzez3FF3Z_m4[<fGT;0
+!i122 1
+l15
+L8 68
+V7MQg2[8fT?Znkkno_D^hS0
+!s100 ]VAUC:SW=3SFdjN58NXQC3
+R7
+31
+R18
+!i10b 1
+R19
+R20
+Z21 !s107 Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP2/tb_flipflop_JKrs.vhd|
+!i113 1
+R12
+R13
