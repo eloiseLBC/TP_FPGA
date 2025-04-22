@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TP1_additionneur
-Tue Apr 15 16:32:10 2025
+Tue Apr 22 09:27:55 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -43,14 +43,14 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 15 16:32:10 2025           ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 22 09:27:55 2025           ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                   ; TP1_additionneur                                ;
-; Top-level Entity Name           ; full_adder                                      ;
+; Top-level Entity Name           ; toplevel                                        ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
 ; Total registers                 ; 0                                               ;
-; Total pins                      ; 5                                               ;
+; Total pins                      ; 28                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -69,7 +69,7 @@ on the Quartus Prime software download page.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
-; Top-level entity name                                                           ; full_adder         ; TP1_additionneur   ;
+; Top-level entity name                                                           ; toplevel           ; TP1_additionneur   ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -166,51 +166,61 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; half_adder.vhd                   ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/half_adder.vhd ;         ;
-; full_adder.vhd                   ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; half_adder.vhd                   ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/half_adder.vhd    ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder.vhd    ;         ;
+; full_adder_4b.vhd                ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder_4b.vhd ;         ;
+; toplevel.vhd                     ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd      ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1         ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2         ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 0         ;
-;     -- 5 input functions                    ; 0         ;
-;     -- 4 input functions                    ; 0         ;
-;     -- <=3 input functions                  ; 2         ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 5         ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; Cin~input ;
-; Maximum fan-out                             ; 2         ;
-; Total fan-out                               ; 13        ;
-; Average fan-out                             ; 1.08      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 3           ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 6           ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 0           ;
+;     -- 5 input functions                    ; 4           ;
+;     -- 4 input functions                    ; 0           ;
+;     -- <=3 input functions                  ; 2           ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 28          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[0]~input ;
+; Maximum fan-out                             ; 4           ;
+; Total fan-out                               ; 69          ;
+; Average fan-out                             ; 1.11        ;
++---------------------------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
-+--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name ; Library Name ;
-+--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+-------------+--------------+
-; |full_adder                          ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 5    ; 0            ; |full_adder                                 ; full_adder  ; work         ;
-;    |half_adder:instance_half_adder2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |full_adder|half_adder:instance_half_adder2 ; half_adder  ; work         ;
-+--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name   ; Library Name ;
++--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------+---------------+--------------+
+; |toplevel                                  ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 28   ; 0            ; |toplevel                                                                                           ; toplevel      ; work         ;
+;    |full_adder_4b:instance_full_adder_4b|  ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b                                                      ; full_adder_4b ; work         ;
+;       |full_adder:b2v_inst1|               ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst1                                 ; full_adder    ; work         ;
+;          |half_adder:instance_half_adder2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst1|half_adder:instance_half_adder2 ; half_adder    ; work         ;
+;       |full_adder:b2v_inst2|               ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst2                                 ; full_adder    ; work         ;
+;          |half_adder:instance_half_adder2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst2|half_adder:instance_half_adder2 ; half_adder    ; work         ;
+;       |full_adder:b2v_inst3|               ; 2 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst3                                 ; full_adder    ; work         ;
+;          |half_adder:instance_half_adder2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst3|half_adder:instance_half_adder2 ; half_adder    ; work         ;
+;       |full_adder:b2v_inst|                ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst                                  ; full_adder    ; work         ;
+;          |half_adder:instance_half_adder2| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst|half_adder:instance_half_adder2  ; half_adder    ; work         ;
++--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -234,13 +244,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 2                           ;
-;     normal            ; 2                           ;
+; arriav_lcell_comb     ; 7                           ;
+;     normal            ; 7                           ;
+;         0 data inputs ; 1                           ;
 ;         3 data inputs ; 2                           ;
-; boundary_port         ; 5                           ;
+;         5 data inputs ; 4                           ;
+; boundary_port         ; 28                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -259,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Apr 15 16:31:57 2025
+    Info: Processing started: Tue Apr 22 09:27:42 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TP1_additionneur -c TP1_additionneur
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -277,18 +289,34 @@ Info (12021): Found 2 design units, including 1 entities, in source file full_ad
 Info (12021): Found 2 design units, including 1 entities, in source file tb_full_adder.vhd
     Info (12022): Found design unit 1: tb_full_adder-tb File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/tb_full_adder.vhd Line: 8
     Info (12023): Found entity 1: tb_full_adder File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/tb_full_adder.vhd Line: 5
-Info (12127): Elaborating entity "full_adder" for the top level hierarchy
-Info (12128): Elaborating entity "half_adder" for hierarchy "half_adder:instance_half_adder1" File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder.vhd Line: 36
+Info (12021): Found 2 design units, including 1 entities, in source file full_adder_4b.vhd
+    Info (12022): Found design unit 1: full_adder_4b-bdf_type File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder_4b.vhd Line: 45
+    Info (12023): Found entity 1: full_adder_4b File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder_4b.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file tb_full_adder_4b.vhd
+    Info (12022): Found design unit 1: tb_full_adder_4b-tb File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/tb_full_adder_4b.vhd Line: 7
+    Info (12023): Found entity 1: tb_full_adder_4b File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/tb_full_adder_4b.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
+    Info (12022): Found design unit 1: toplevel-behavorial File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 13
+    Info (12023): Found entity 1: toplevel File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 5
+Info (12127): Elaborating entity "toplevel" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "LEDG[6..4]" at toplevel.vhd(8) File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 8
+Info (12128): Elaborating entity "full_adder_4b" for hierarchy "full_adder_4b:instance_full_adder_4b" File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 15
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst" File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder_4b.vhd Line: 65
+Info (12128): Elaborating entity "half_adder" for hierarchy "full_adder_4b:instance_full_adder_4b|full_adder:b2v_inst|half_adder:instance_half_adder1" File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/full_adder.vhd Line: 36
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 8
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 8
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/toplevel.vhd Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 2 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 781 megabytes
-    Info: Processing ended: Tue Apr 15 16:32:10 2025
+Info (21057): Implemented 34 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 6 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 767 megabytes
+    Info: Processing ended: Tue Apr 22 09:27:55 2025
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:02
 

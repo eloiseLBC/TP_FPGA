@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC5C6F27C7
-set_global_assignment -name TOP_LEVEL_ENTITY full_adder
+set_global_assignment -name TOP_LEVEL_ENTITY toplevel
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "TUE JUN  4 20:41:15 2013"
 set_global_assignment -name LAST_QUARTUS_VERSION "24.1std.0 Lite Edition"
@@ -422,12 +422,27 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name VHDL_FILE tb_half_adder.vhd
 set_global_assignment -name VHDL_FILE half_adder.vhd
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_full_adder -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_full_adder_4b -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME tb_half_adder -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_half_adder
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "50 ns" -section_id tb_half_adder
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_half_adder -section_id tb_half_adder
 set_global_assignment -name VHDL_FILE full_adder.vhd
+set_global_assignment -name VHDL_FILE tb_full_adder.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_full_adder -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_full_adder
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "90 ns" -section_id tb_full_adder
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_full_adder -section_id tb_full_adder
+set_global_assignment -name VHDL_FILE full_adder_4b.vhd
+set_global_assignment -name VHDL_FILE tb_full_adder_4b.vhd
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_full_adder_4b -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_full_adder_4b
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "70 ns" -section_id tb_full_adder_4b
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_full_adder_4b -section_id tb_full_adder_4b
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_half_adder.vhd -section_id tb_half_adder
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_full_adder.vhd -section_id tb_full_adder
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_full_adder_4b.vhd -section_id tb_full_adder_4b
+set_global_assignment -name VHDL_FILE toplevel.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -776,12 +791,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6]
-set_global_assignment -name VHDL_FILE tb_full_adder.vhd
-set_global_assignment -name EDA_TEST_BENCH_NAME tb_full_adder -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_full_adder
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "90 ns" -section_id tb_full_adder
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_full_adder -section_id tb_full_adder
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_half_adder.vhd -section_id tb_half_adder
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_full_adder.vhd -section_id tb_full_adder
-set_global_assignment -name BDF_FILE full_adder_4b.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
