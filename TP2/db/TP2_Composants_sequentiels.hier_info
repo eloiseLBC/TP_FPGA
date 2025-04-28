@@ -1,4 +1,4 @@
-|shift_register_universal8
+|shift_register_universal
 SSR => Mux0.IN0
 SSL => Mux7.IN0
 Pi[0] => Mux7.IN1

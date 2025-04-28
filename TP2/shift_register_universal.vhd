@@ -1,0 +1,71 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- Fonctionnement du registre universel 8 bits, avec entrées asynchrones
+-- SETn | RSTn | SEL   | SSR | SSL |   Registre           | Comportement
+-------------------------------------------------------------------------------------------
+--   0  |   1  |  XXX  |  X  |  X  | "11111111"           | Set asynchrone (tous les bits à 1)
+--   1  |   0  |  XXX  |  X  |  X  | "00000000"           | Reset asynchrone (tous les bits à 0)
+--   0  |   0  |  XXX  |  X  |  X  |  Indéfini            | État interdit (les deux actifs)
+--   1  |   1  | X00   |  X  |  X  | Hold                 | Pas de changement (mémorisation)
+--   1  |   1  | X11   |  Pi |  X  | Chargement parallèle | Charge Pi dans le registre
+--   1  |   1  | 001   | SSR |  X  | Décalage à droite    | Décale à droite, SSR entre
+--   1  |   1  | 010   |  X  | SSL | Décalage à gauche    | Décale à gauche, SSL entre
+--   1  |   1  | 101   | SSR |  X  | Rotation à droite    | Décale à droite, bit0 revient à bit7
+--   1  |   1  | 110   |  X  | SSL | Rotation à gauche    | Décale à gauche, bit7 revient à bit0
+
+entity shift_register_universal is
+	 generic (
+		  data_width : integer := 8
+	 );
+    port(
+        SSR   : in  std_logic;   -- Shift right serial input
+        SSL   : in  std_logic;   -- Shift left serial input
+        Pi    : in  std_logic_vector (data_width-1 downto 0);   -- Parallel input
+        SEL   : in  std_logic_vector(2 downto 0);   -- Selection mode
+        CLK   : in std_logic;    -- Horloge
+		  SETn  : in std_logic; -- Preset
+		  RSTn  : in std_logic; -- Reset
+		  SOR   : out std_logic; -- Shift output right
+		  SOL   : out std_logic; -- Shift output left
+		  Qo    : out std_logic_vector(data_width-1 downto 0)
+    );
+end shift_register_universal;
+
+architecture behavioral of shift_register_universal is
+    signal reg : std_logic_vector(data_width-1 downto 0) := (others => '0');
+begin
+
+    process(CLK, SETn, RSTn)
+    begin
+        if RSTn = '0' then
+            reg <= (others => '0');  
+        elsif SETn = '0' then
+            reg <= (others => '1'); 
+        elsif rising_edge(CLK) then
+            case SEL is
+					when "000" =>
+						reg <= reg;
+					when "001" =>
+						reg <= SSR & reg(data_width-1 downto 1); -- Shift right
+					when "010" =>
+						reg <= reg(data_width-2 downto 0) & SSL; -- Shift left
+					when "011" =>
+						reg <= Pi;
+					when "101" =>
+						reg <= reg(0) & reg(data_width-1 downto 1);
+					when "110" =>
+						reg <= reg(data_width-2 downto 0) & reg(data_width-1);
+					when others =>
+						reg <= reg;
+				end case;
+        end if;
+    end process;
+
+    -- Assignation des sorties
+    Qo  <= reg;
+    SOR <= reg(0); -- Sortie série à droite (bit 0)
+    SOL <= reg(data_width-1); -- Sortie série à gauche (bit 7)
+
+end behavioral;

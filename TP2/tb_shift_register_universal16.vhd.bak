@@ -1,0 +1,85 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_shift_register_universal16 is
+end tb_shift_register_universal16;
+
+architecture tb of tb_shift_register_universal16 is
+    signal CLK   : std_logic := '0';
+    signal SETn  : std_logic := '1';
+    signal RSTn  : std_logic := '1';
+    signal SEL   : std_logic_vector(2 downto 0) := (others => '0');
+    signal SSR   : std_logic := '0';
+    signal SSL   : std_logic := '0';
+    signal Pi    : std_logic_vector(15 downto 0) := (others => '0');
+    signal SOR   : std_logic;
+    signal SOL   : std_logic;
+    signal Qo    : std_logic_vector(15 downto 0);
+begin
+
+    -- Instanciation
+    UUT : entity work.shift_register_universal
+        generic map (data_width => 16)
+        port map (
+            SSR => SSR,
+            SSL => SSL,
+            Pi  => Pi,
+            SEL => SEL,
+            CLK => CLK,
+            SETn => SETn,
+            RSTn => RSTn,
+            SOR => SOR,
+            SOL => SOL,
+            Qo  => Qo
+        );
+
+    -- Horloge
+    clk_process : process
+    begin
+        while true loop
+            CLK <= '0'; wait for 10 ns;
+            CLK <= '1'; wait for 10 ns;
+        end loop;
+    end process;
+
+    -- Stimulation
+    stim_proc : process
+    begin
+        wait for 15 ns;
+
+        -- Reset asynchrone
+        RSTn <= '0'; wait for 5 ns;
+        assert Qo = (others => '0') report "Erreur RESET 16 bits" severity error;
+        RSTn <= '1'; wait for 20 ns;
+
+        -- Set asynchrone
+        SETn <= '0'; wait for 5 ns;
+        assert Qo = (others => '1') report "Erreur SET 16 bits" severity error;
+        SETn <= '1'; wait for 20 ns;
+
+        -- Parallel load
+        Pi <= X"AA55"; -- Ex: 1010101001010101
+        SEL <= "011"; wait for 20 ns;
+        assert Qo = X"AA55" report "Erreur Parallel Load 16 bits" severity error;
+
+        -- Shift right
+        SSR <= '1';
+        SEL <= "001"; wait for 20 ns;
+        assert Qo(15) = '1' report "Erreur Shift Right 16 bits" severity error;
+
+        -- Shift left
+        SSL <= '0';
+        SEL <= "010"; wait for 20 ns;
+        assert Qo(0) = '0' report "Erreur Shift Left 16 bits" severity error;
+
+        -- Rotate right
+        SEL <= "101"; wait for 20 ns;
+
+        -- Rotate left
+        SEL <= "110"; wait for 20 ns;
+
+        wait;
+    end process;
+
+end tb;
