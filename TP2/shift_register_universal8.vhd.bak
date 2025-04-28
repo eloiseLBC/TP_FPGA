@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- Fonctionnement du registre universel 8 bits, Serial In Serial Out
+-- SETn | RSTn | CLK ↑ | Si |     Registre                 | Comportement
+-------------------------------------------------------------------------------------------------
+--   0  |   1  |   X   |  X |  "11111111"                  | Set asynchrone (tous les bits à 1)
+--   1  |   0  |   X   |  X |  "00000000"                  | Reset asynchrone (tous les bits à 0)
+--   0  |   0  |   X   |  X |   Indéfini                   | État interdit (les deux actifs)
+--   1  |   1  | front |  0 | Décalage à droite, Si inséré | Entrée série = 0
+--   1  |   1  | front |  1 | Décalage à droite, Si inséré | Entrée série = 1
