@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "CHEN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[8]",
+					"strict" : false
+				},
+				{
+					"name" : "CHEN[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
