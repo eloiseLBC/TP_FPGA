@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon May  5 09:57:18 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : TP3_MEF
+Top-level Entity Name : bistable
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 4
+Total pins : 4
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

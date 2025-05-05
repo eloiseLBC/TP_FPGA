@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity bistable is
+    port(
+        CLK : in  std_logic;  -- Horloge d'entrée (sensibilité fronts montants)
+        RST : in  std_logic;  -- Reset (retour à l'état A)
+        X   : in std_logic;   -- Entrée du bistable
+		  Y   : out std_logic   -- Sortie du bistable
+    );
+end bistable;

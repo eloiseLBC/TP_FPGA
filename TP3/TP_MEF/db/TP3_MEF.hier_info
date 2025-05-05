@@ -1,0 +1,10 @@
+|bistable
+clk => current_state~1.DATAIN
+rst => current_state~3.DATAIN
+x => Selector1.IN2
+x => Selector3.IN1
+x => Selector0.IN1
+x => Selector2.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
