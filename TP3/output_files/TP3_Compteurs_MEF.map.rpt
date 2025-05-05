@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TP3_Compteurs_MEF
-Mon Apr 28 16:45:21 2025
+Mon May  5 09:01:17 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: clock_divider:UUT_divider
+ 11. Port Connectivity Checks: "clock_divider:UUT_divider"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +46,14 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 28 16:45:20 2025           ;
+; Analysis & Synthesis Status     ; Successful - Mon May  5 09:01:17 2025           ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                   ; TP3_Compteurs_MEF                               ;
-; Top-level Entity Name           ; chenillard                                      ;
+; Top-level Entity Name           ; toplevel                                        ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 4                                               ;
-; Total pins                      ; 12                                              ;
+; Total registers                 ; 25                                              ;
+; Total pins                      ; 15                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -69,7 +72,7 @@ on the Quartus Prime software download page.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
-; Top-level entity name                                                           ; chenillard         ; TP3_Compteurs_MEF  ;
+; Top-level entity name                                                           ; toplevel           ; TP3_Compteurs_MEF  ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -168,50 +171,64 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; chenillard.vhd                   ; yes             ; User VHDL File  ; Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/chenillard.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; clock_divider.vhd                ; yes             ; User VHDL File  ; C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/clock_divider.vhd ;         ;
+; chenillard.vhd                   ; yes             ; User VHDL File  ; C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/chenillard.vhd    ;         ;
+; toplevel.vhd                     ; yes             ; User VHDL File  ; C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd      ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 7        ;
-;                                             ;          ;
-; Combinational ALUT usage for logic          ; 14       ;
-;     -- 7 input functions                    ; 0        ;
-;     -- 6 input functions                    ; 0        ;
-;     -- 5 input functions                    ; 0        ;
-;     -- 4 input functions                    ; 10       ;
-;     -- <=3 input functions                  ; 4        ;
-;                                             ;          ;
-; Dedicated logic registers                   ; 4        ;
-;                                             ;          ;
-; I/O pins                                    ; 12       ;
-;                                             ;          ;
-; Total DSP Blocks                            ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; state[2] ;
-; Maximum fan-out                             ; 14       ;
-; Total fan-out                               ; 85       ;
-; Average fan-out                             ; 2.02     ;
-+---------------------------------------------+----------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 18           ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 35           ;
+;     -- 7 input functions                    ; 0            ;
+;     -- 6 input functions                    ; 0            ;
+;     -- 5 input functions                    ; 0            ;
+;     -- 4 input functions                    ; 10           ;
+;     -- <=3 input functions                  ; 25           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 25           ;
+;                                             ;              ;
+; I/O pins                                    ; 15           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 25           ;
+; Total fan-out                               ; 192          ;
+; Average fan-out                             ; 2.13         ;
++---------------------------------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |chenillard                ; 14 (14)             ; 4 (4)                     ; 0                 ; 0          ; 12   ; 0            ; |chenillard         ; chenillard  ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name   ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------+--------------+
+; |toplevel                      ; 35 (0)              ; 25 (0)                    ; 0                 ; 0          ; 15   ; 0            ; |toplevel                           ; toplevel      ; work         ;
+;    |chenillard:UUT_chenillard| ; 14 (14)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel|chenillard:UUT_chenillard ; chenillard    ; work         ;
+;    |clock_divider:UUT_divider| ; 21 (21)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel|clock_divider:UUT_divider ; clock_divider ; work         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++-------------------------------------------+--------------------+
+; Register name                             ; Reason for Removal ;
++-------------------------------------------+--------------------+
+; clock_divider:UUT_divider|counter[21..23] ; Lost fanout        ;
+; Total Number of Removed Registers = 3     ;                    ;
++-------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -219,14 +236,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 25    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 25    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:UUT_divider ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; data_width     ; 5     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:UUT_divider" ;
++---------+-------+----------+--------------------------+
+; Port    ; Type  ; Severity ; Details                  ;
++---------+-------+----------+--------------------------+
+; n[1..0] ; Input ; Info     ; Stuck at GND             ;
+; n[4]    ; Input ; Info     ; Stuck at VCC             ;
+; n[3]    ; Input ; Info     ; Stuck at GND             ;
+; n[2]    ; Input ; Info     ; Stuck at VCC             ;
++---------+-------+----------+--------------------------+
 
 
 +-----------------------------------------------------+
@@ -234,18 +273,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     CLR               ; 4                           ;
-; arriav_lcell_comb     ; 19                          ;
-;     normal            ; 19                          ;
-;         1 data inputs ; 5                           ;
+; arriav_ff             ; 25                          ;
+;     CLR               ; 25                          ;
+; arriav_lcell_comb     ; 40                          ;
+;     arith             ; 20                          ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 20                          ;
+;         1 data inputs ; 6                           ;
 ;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 3                           ;
 ;         4 data inputs ; 10                          ;
-; boundary_port         ; 12                          ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.48                        ;
+; Max LUT depth         ; 2.90                        ;
+; Average LUT depth     ; 2.02                        ;
 +-----------------------+-----------------------------+
 
 
@@ -264,36 +306,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Mon Apr 28 16:45:06 2025
+    Info: Processing started: Mon May  5 09:01:03 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TP3_Compteurs_MEF -c TP3_Compteurs_MEF
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file baseline_c5gx.v
-    Info (12023): Found entity 1: baseline_c5gx File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/baseline_c5gx.v Line: 38
+    Info (12023): Found entity 1: baseline_c5gx File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/baseline_c5gx.v Line: 38
 Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
-    Info (12022): Found design unit 1: clock_divider-behavioral File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/clock_divider.vhd Line: 19
-    Info (12023): Found entity 1: clock_divider File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/clock_divider.vhd Line: 7
+    Info (12022): Found design unit 1: clock_divider-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/clock_divider.vhd Line: 19
+    Info (12023): Found entity 1: clock_divider File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/clock_divider.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file tb_clock_divider.vhd
-    Info (12022): Found design unit 1: tb_clock_divider-tb File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/tb_clock_divider.vhd Line: 8
-    Info (12023): Found entity 1: tb_clock_divider File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/tb_clock_divider.vhd Line: 5
+    Info (12022): Found design unit 1: tb_clock_divider-tb File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/tb_clock_divider.vhd Line: 8
+    Info (12023): Found entity 1: tb_clock_divider File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/tb_clock_divider.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file chenillard.vhd
-    Info (12022): Found design unit 1: chenillard-behavioral File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/chenillard.vhd Line: 13
-    Info (12023): Found entity 1: chenillard File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/chenillard.vhd Line: 5
+    Info (12022): Found design unit 1: chenillard-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/chenillard.vhd Line: 13
+    Info (12023): Found entity 1: chenillard File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/chenillard.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tb_chenillard.vhd
-    Info (12022): Found design unit 1: tb_chenillard-tb File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/tb_chenillard.vhd Line: 8
-    Info (12023): Found entity 1: tb_chenillard File: Z:/Users/eloiseleblanc/Desktop/TP_FPGA/TP3/tb_chenillard.vhd Line: 5
-Info (12127): Elaborating entity "chenillard" for the top level hierarchy
+    Info (12022): Found design unit 1: tb_chenillard-tb File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/tb_chenillard.vhd Line: 8
+    Info (12023): Found entity 1: tb_chenillard File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/tb_chenillard.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
+    Info (12022): Found design unit 1: toplevel-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 13
+    Info (12023): Found entity 1: toplevel File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 5
+Info (12127): Elaborating entity "toplevel" for the top level hierarchy
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:UUT_divider" File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 16
+Info (12128): Elaborating entity "chenillard" for hierarchy "chenillard:UUT_chenillard" File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 24
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP3/toplevel.vhd Line: 8
+Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 794 megabytes
-    Info: Processing ended: Mon Apr 28 16:45:21 2025
-    Info: Elapsed time: 00:00:15
+    Info (21061): Implemented 35 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 797 megabytes
+    Info: Processing ended: Mon May  5 09:01:17 2025
+    Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:02
 
 
