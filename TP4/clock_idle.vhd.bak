@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity clock_idle is 
+	port(
+		clock : in std_logic;
+		led : out std_logic
+	);
+end entity;
+
+
+		

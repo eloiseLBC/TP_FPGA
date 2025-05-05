@@ -777,3 +777,4 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_bistable
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "250 ns" -section_id tb_bistable
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_bistable -section_id tb_bistable
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_bistable.vhd -section_id tb_bistable
+set_global_assignment -name VHDL_FILE toplevel.vhd

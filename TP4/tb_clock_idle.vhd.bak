@@ -1,0 +1,46 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_clock_idle is
+end tb_clock_idle;
+
+architecture tb of tb_clock_idle is
+    signal clock : std_logic := '0';
+    signal led   : std_logic;
+
+    -- Version accélérée du composant
+    component clock_idle is
+        port(
+            clock : in std_logic;
+            led   : out std_logic
+        );
+    end component;
+
+begin
+
+    -- Instance du composant avec horloge rapide
+    uut : entity work.clock_idle
+        port map (
+            clock => clock,
+            led   => led
+        );
+
+    -- Horloge : 10 ns de période (100 MHz pour la sim, rapide)
+    clk_process : process
+    begin
+        while true loop
+            clock <= '0'; wait for 5 ns;
+            clock <= '1'; wait for 5 ns;
+        end loop;
+    end process;
+
+    -- Stimuli (juste observer le clignotement)
+    stim_proc : process
+    begin
+        wait for 500 ns;
+        assert false report "Fin de simulation" severity note;
+        wait;
+    end process;
+
+end tb;

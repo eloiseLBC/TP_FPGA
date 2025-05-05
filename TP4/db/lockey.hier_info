@@ -1,0 +1,31 @@
+|clock_idle
+clock => led_state.CLK
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+clock => counter[7].CLK
+clock => counter[8].CLK
+clock => counter[9].CLK
+clock => counter[10].CLK
+clock => counter[11].CLK
+clock => counter[12].CLK
+clock => counter[13].CLK
+clock => counter[14].CLK
+clock => counter[15].CLK
+clock => counter[16].CLK
+clock => counter[17].CLK
+clock => counter[18].CLK
+clock => counter[19].CLK
+clock => counter[20].CLK
+clock => counter[21].CLK
+clock => counter[22].CLK
+clock => counter[23].CLK
+clock => counter[24].CLK
+clock => counter[25].CLK
+led <= led_state.DB_MAX_OUTPUT_PORT_TYPE
+
+
