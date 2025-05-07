@@ -1,26 +1,55 @@
-|writing_code
-clk => last_bites_state[0].CLK
-clk => last_bites_state[1].CLK
-clk => last_bites_state[2].CLK
-clk => last_bites_state[3].CLK
-clk => step[0].CLK
-clk => step[1].CLK
-clk => step[2].CLK
-clk => writen_state[0].CLK
-clk => writen_state[1].CLK
-clk => writen_state[2].CLK
-clk => writen_state[3].CLK
-writing_bites[0] => last_bites_state[0].DATAIN
-writing_bites[0] => Equal0.IN3
-writing_bites[1] => last_bites_state[1].DATAIN
-writing_bites[1] => Equal0.IN2
-writing_bites[2] => last_bites_state[2].DATAIN
-writing_bites[2] => Equal0.IN1
-writing_bites[3] => last_bites_state[3].DATAIN
-writing_bites[3] => Equal0.IN0
-writen_bites[0] << writen_state[0].DB_MAX_OUTPUT_PORT_TYPE
-writen_bites[1] << writen_state[1].DB_MAX_OUTPUT_PORT_TYPE
-writen_bites[2] << writen_state[2].DB_MAX_OUTPUT_PORT_TYPE
-writen_bites[3] << writen_state[3].DB_MAX_OUTPUT_PORT_TYPE
+|open_state
+CLOCK_50_B6A => chenillard:writing_code_inst.CLK
+hex0[0] <= <VCC>
+hex0[1] <= <VCC>
+hex0[2] <= <VCC>
+hex0[3] <= <GND>
+hex0[4] <= <VCC>
+hex0[5] <= <GND>
+hex0[6] <= <GND>
+hex1[0] <= <GND>
+hex1[1] <= <GND>
+hex1[2] <= <VCC>
+hex1[3] <= <VCC>
+hex1[4] <= <GND>
+hex1[5] <= <GND>
+hex1[6] <= <GND>
+hex2[0] <= <GND>
+hex2[1] <= <GND>
+hex2[2] <= <GND>
+hex2[3] <= <VCC>
+hex2[4] <= <VCC>
+hex2[5] <= <GND>
+hex2[6] <= <GND>
+hex3[0] <= <GND>
+hex3[1] <= <GND>
+hex3[2] <= <GND>
+hex3[3] <= <GND>
+hex3[4] <= <GND>
+hex3[5] <= <GND>
+hex3[6] <= <VCC>
+ledg[0] <= chenillard:writing_code_inst.CHEN[0]
+ledg[1] <= chenillard:writing_code_inst.CHEN[1]
+ledg[2] <= chenillard:writing_code_inst.CHEN[2]
+ledg[3] <= chenillard:writing_code_inst.CHEN[3]
+ledg[4] <= chenillard:writing_code_inst.CHEN[4]
+ledg[5] <= chenillard:writing_code_inst.CHEN[5]
+ledg[6] <= chenillard:writing_code_inst.CHEN[6]
+ledg[7] <= chenillard:writing_code_inst.CHEN[7]
+
+
+|open_state|chenillard:writing_code_inst
+CLK => state[0].CLK
+CLK => state[1].CLK
+CLK => state[2].CLK
+CLK => state[3].CLK
+CHEN[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+CHEN[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 

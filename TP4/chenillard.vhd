@@ -1,0 +1,40 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity chenillard is
+    port(
+        CLK  : in  std_logic;               -- Horloge d'entrée
+        CHEN : out std_logic_vector(7 downto 0) -- Sortie 8 bits
+    );
+end chenillard;
+
+architecture behavioral of chenillard is
+    signal state : integer range 0 to 8 := 0; -- Compteur d'états
+begin
+
+    process(CLK)
+    begin
+        
+        if rising_edge(CLK) then
+            if state = 8 then
+                state <= 0; -- Retour au début
+            else
+                state <= state + 1; -- Cycle suivant
+            end if;
+        end if;
+    end process;
+
+    -- Décodage de l'état vers CHEN
+    with state select
+        CHEN <= "00001111" when 0,
+                "00011110" when 1,
+                "00111100" when 2,
+                "01111000" when 3,
+                "11110000" when 4,
+                "11100001" when 5,
+                "11000011" when 6,
+                "10000111" when 7,
+                (others => '0') when others; -- Sécurité
+
+end behavioral;
