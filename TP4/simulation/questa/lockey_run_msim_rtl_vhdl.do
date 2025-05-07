@@ -50,13 +50,13 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/clock_idle.vhd}
+vcom -93 -work work {C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/writing_code.vhd}
 
-vcom -93 -work work {C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/tb_clock_idle.vhd}
+vcom -93 -work work {C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/tb_writing_code.vhd}
 
-vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L cyclonev_hssi -L rtl_work -L work -voptargs="+acc"  tb_clock_idle
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L cyclonev_hssi -L rtl_work -L work -voptargs="+acc"  tb_writing_code
 
 add wave *
 view structure
 view signals
-run 1000 ns
+run 200 ns

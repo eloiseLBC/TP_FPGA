@@ -1,46 +1,26 @@
-|top_level
-KEY[0] => writing_code:writing_code_inst.writing_bites[0]
-KEY[1] => writing_code:writing_code_inst.writing_bites[1]
-KEY[2] => writing_code:writing_code_inst.writing_bites[2]
-KEY[3] => writing_code:writing_code_inst.writing_bites[3]
-HEX0[0] <= <VCC>
-HEX0[1] <= <VCC>
-HEX0[2] <= <VCC>
-HEX0[3] <= <VCC>
-HEX0[4] <= <VCC>
-HEX0[5] <= <VCC>
-HEX0[6] <= writing_code:writing_code_inst.writen_bites[0]
-HEX1[0] <= <VCC>
-HEX1[1] <= <VCC>
-HEX1[2] <= <VCC>
-HEX1[3] <= <VCC>
-HEX1[4] <= <VCC>
-HEX1[5] <= <VCC>
-HEX1[6] <= writing_code:writing_code_inst.writen_bites[1]
-HEX2[0] <= <VCC>
-HEX2[1] <= <VCC>
-HEX2[2] <= <VCC>
-HEX2[3] <= <VCC>
-HEX2[4] <= <VCC>
-HEX2[5] <= <VCC>
-HEX2[6] <= writing_code:writing_code_inst.writen_bites[2]
-HEX3[0] <= <VCC>
-HEX3[1] <= <VCC>
-HEX3[2] <= <VCC>
-HEX3[3] <= <VCC>
-HEX3[4] <= <VCC>
-HEX3[5] <= <VCC>
-HEX3[6] <= writing_code:writing_code_inst.writen_bites[3]
-
-
-|top_level|writing_code:writing_code_inst
-writing_bites[0] => writen_bites[0].DATAIN
-writing_bites[1] => writen_bites[1].DATAIN
-writing_bites[2] => writen_bites[2].DATAIN
-writing_bites[3] => writen_bites[3].DATAIN
-writen_bites[0] <= writing_bites[0].DB_MAX_OUTPUT_PORT_TYPE
-writen_bites[1] <= writing_bites[1].DB_MAX_OUTPUT_PORT_TYPE
-writen_bites[2] <= writing_bites[2].DB_MAX_OUTPUT_PORT_TYPE
-writen_bites[3] <= writing_bites[3].DB_MAX_OUTPUT_PORT_TYPE
+|writing_code
+clk => last_bites_state[0].CLK
+clk => last_bites_state[1].CLK
+clk => last_bites_state[2].CLK
+clk => last_bites_state[3].CLK
+clk => step[0].CLK
+clk => step[1].CLK
+clk => step[2].CLK
+clk => writen_state[0].CLK
+clk => writen_state[1].CLK
+clk => writen_state[2].CLK
+clk => writen_state[3].CLK
+writing_bites[0] => last_bites_state[0].DATAIN
+writing_bites[0] => Equal0.IN3
+writing_bites[1] => last_bites_state[1].DATAIN
+writing_bites[1] => Equal0.IN2
+writing_bites[2] => last_bites_state[2].DATAIN
+writing_bites[2] => Equal0.IN1
+writing_bites[3] => last_bites_state[3].DATAIN
+writing_bites[3] => Equal0.IN0
+writen_bites[0] << writen_state[0].DB_MAX_OUTPUT_PORT_TYPE
+writen_bites[1] << writen_state[1].DB_MAX_OUTPUT_PORT_TYPE
+writen_bites[2] << writen_state[2].DB_MAX_OUTPUT_PORT_TYPE
+writen_bites[3] << writen_state[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
