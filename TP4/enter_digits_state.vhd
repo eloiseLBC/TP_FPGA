@@ -2,27 +2,35 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity top_level is 
+entity enter_digits_state is 
 	port(
-		CLOCK_50_B6A : in std_logic; -- Garde en mémoire l'état du bouton
+		clock : in std_logic; -- Garde en mémoire l'état du bouton -- Attention : doit prendre la clock du fpga, pas la clock divisée
+		clock_divided: in std_logic;
 		KEY  : in std_logic_vector(3 downto 0);
 		HEX0 : out std_logic_vector(6 downto 0);
 		HEX1 : out std_logic_vector(6 downto 0);
 		HEX2 : out std_logic_vector(6 downto 0);
-		HEX3 : out std_logic_vector(6 downto 0)
+		HEX3 : out std_logic_vector(6 downto 0);
 		
+		ledr: out std_logic_vector(9 downto 0)
 	);
 end entity;
 
-architecture behavioral of top_level is
+architecture behavioral of enter_digits_state is
     signal writen_bites : std_logic_vector(3 downto 0);
 	 
 	 
 begin
 
+	idle_state_instance: entity work.idle_state
+			port map(
+				clock     => clock_divided,            
+				LEDsortie => ledr  -- LEDs rouges
+			);
+
     writing_code_inst : entity work.writing_code
         port map (
-				clk           => CLOCK_50_B6A,
+				clk           => clock,
             writing_bites => KEY,
             writen_bites  => writen_bites
         );

@@ -3,8 +3,8 @@ use ieee.std_logic_1164.all;
 
 entity idle_state is
     port (
-        CLOCK_50_B6A : in  std_logic;               -- Horloge principale 50 MHz de la carte
-        LEDR        : out std_logic_vector(7 downto 0)  -- LEDs vertes
+        clock : in  std_logic;               -- Horloge principale 50 MHz de la carte
+        LEDsortie        : out std_logic_vector(9 downto 0)  
     );
 end entity;
 
@@ -15,11 +15,11 @@ begin
     -- Instance du clignotement d'horloge
     UUT : entity work.clock_idle
         port map (
-            clock => CLOCK_50_B6A,
+            clock => clock,
             led   => led_out
         );
 
     -- LEDG(0) clignote, les autres sont éteintes
-    LEDR(0) <= led_out;
+    LEDsortie(0) <= led_out;
 
 end behavioral;
