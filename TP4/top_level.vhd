@@ -28,9 +28,9 @@ begin
         );
 
     -- Affichage '-' sur les afficheurs activés (segment g activé uniquement = bit 6 à 0, les autres à 1)
-    HEX0 <= "0111111" when writen_bites(0) = '1' else "1111111";  -- '-' ou vide
-    HEX1 <= "0111111" when writen_bites(1) = '1' else "1111111";
-    HEX2 <= "0111111" when writen_bites(2) = '1' else "1111111";
-    HEX3 <= "0111111" when writen_bites(3) = '1' else "1111111";
+    HEX0 <= "0111111" when writen_bites(3) = '1' else "1111111";  -- '-' ou vide
+    HEX1 <= "0111111" when writen_bites(2) = '1' else "1111111";
+    HEX2 <= "0111111" when writen_bites(1) = '1' else "1111111";
+    HEX3 <= "0111111" when writen_bites(0) = '1' else "1111111";
 
 end behavioral;
