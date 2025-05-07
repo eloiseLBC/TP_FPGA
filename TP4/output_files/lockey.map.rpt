@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lockey
-Wed May  7 11:19:38 2025
+Wed May  7 11:54:03 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: clock_divider:UUT_divider
+ 11. Port Connectivity Checks: "clock_divider:UUT_divider"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +46,14 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May  7 11:19:38 2025           ;
+; Analysis & Synthesis Status     ; Successful - Wed May  7 11:54:03 2025           ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                   ; lockey                                          ;
-; Top-level Entity Name           ; open_state                                      ;
+; Top-level Entity Name           ; error_state                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 4                                               ;
-; Total pins                      ; 37                                              ;
+; Total registers                 ; 0                                               ;
+; Total pins                      ; 39                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -69,7 +72,7 @@ on the Quartus Prime software download page.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC5C6F27C7     ;                    ;
-; Top-level entity name                                                           ; open_state         ; lockey             ;
+; Top-level entity name                                                           ; error_state        ; lockey             ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -155,65 +158,73 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; open_state.vhd                   ; yes             ; User VHDL File  ; C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd ;         ;
-; chenillard.vhd                   ; yes             ; User VHDL File  ; C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/chenillard.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                      ;
++----------------------------------+-----------------+-----------------+--------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path               ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------+---------+
+; clock_divider.vhd                ; yes             ; User VHDL File  ; /home/rozenn/TP_FPGA/TP4/clock_divider.vhd ;         ;
+; error_state.vhd                  ; yes             ; User VHDL File  ; /home/rozenn/TP_FPGA/TP4/error_state.vhd   ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                         ;
-+---------------------------------------------+---------------------------------------+
-; Resource                                    ; Usage                                 ;
-+---------------------------------------------+---------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 6                                     ;
-;                                             ;                                       ;
-; Combinational ALUT usage for logic          ; 12                                    ;
-;     -- 7 input functions                    ; 0                                     ;
-;     -- 6 input functions                    ; 0                                     ;
-;     -- 5 input functions                    ; 0                                     ;
-;     -- 4 input functions                    ; 6                                     ;
-;     -- <=3 input functions                  ; 6                                     ;
-;                                             ;                                       ;
-; Dedicated logic registers                   ; 4                                     ;
-;                                             ;                                       ;
-; I/O pins                                    ; 37                                    ;
-;                                             ;                                       ;
-; Total DSP Blocks                            ; 0                                     ;
-;                                             ;                                       ;
-; Maximum fan-out node                        ; chenillard:writing_code_inst|state[2] ;
-; Maximum fan-out                             ; 11                                    ;
-; Total fan-out                               ; 92                                    ;
-; Average fan-out                             ; 1.02                                  ;
-+---------------------------------------------+---------------------------------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 0            ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 0            ;
+;     -- 7 input functions                    ; 0            ;
+;     -- 6 input functions                    ; 0            ;
+;     -- 5 input functions                    ; 0            ;
+;     -- 4 input functions                    ; 0            ;
+;     -- <=3 input functions                  ; 0            ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 39           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; CLOCK_50_B6A ;
+; Maximum fan-out                             ; 1            ;
+; Total fan-out                               ; 39           ;
+; Average fan-out                             ; 0.50         ;
++---------------------------------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
-+-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name ; Library Name ;
-+-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+-------------+--------------+
-; |open_state                       ; 12 (0)              ; 4 (0)                     ; 0                 ; 0          ; 37   ; 0            ; |open_state                              ; open_state  ; work         ;
-;    |chenillard:writing_code_inst| ; 12 (12)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |open_state|chenillard:writing_code_inst ; chenillard  ; work         ;
-+-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |error_state               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 39   ; 0            ; |error_state        ; error_state ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++------------------------------------------+--------------------------------------+
+; Register name                            ; Reason for Removal                   ;
++------------------------------------------+--------------------------------------+
+; clock_divider:UUT_divider|counter[0..23] ; Lost fanout                          ;
+; led_state[0..9]                          ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 34   ;                                      ;
++------------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -221,7 +232,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -231,24 +242,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:UUT_divider ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; data_width     ; 5     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "clock_divider:UUT_divider" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; n    ; Input ; Info     ; Stuck at VCC                ;
++------+-------+----------+-----------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     plain             ; 4                           ;
-; arriav_lcell_comb     ; 19                          ;
-;     normal            ; 19                          ;
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 6                           ;
-; boundary_port         ; 37                          ;
+; boundary_port         ; 39                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.46                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -267,78 +291,96 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed May  7 11:19:23 2025
+    Info: Processing started: Wed May  7 11:53:58 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lock -c lockey
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file lockey_toplevel.vhd
-    Info (12022): Found design unit 1: lockey_toplevel-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/lockey_toplevel.vhd Line: 11
-    Info (12023): Found entity 1: lockey_toplevel File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/lockey_toplevel.vhd Line: 4
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
+    Info (12022): Found design unit 1: clock_divider-behavioral File: /home/rozenn/TP_FPGA/TP4/clock_divider.vhd Line: 18
+    Info (12023): Found entity 1: clock_divider File: /home/rozenn/TP_FPGA/TP4/clock_divider.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file enter_digits_state.vhd
+    Info (12022): Found design unit 1: top_level-behavioral File: /home/rozenn/TP_FPGA/TP4/enter_digits_state.vhd Line: 17
+    Info (12023): Found entity 1: top_level File: /home/rozenn/TP_FPGA/TP4/enter_digits_state.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file error_state.vhd
+    Info (12022): Found design unit 1: error_state-behavioral File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 16
+    Info (12023): Found entity 1: error_state File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file idle_state.vhd
+    Info (12022): Found design unit 1: idle_state-behavioral File: /home/rozenn/TP_FPGA/TP4/idle_state.vhd Line: 11
+    Info (12023): Found entity 1: idle_state File: /home/rozenn/TP_FPGA/TP4/idle_state.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file baseline_c5gx.v
-    Info (12023): Found entity 1: baseline_c5gx File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/baseline_c5gx.v Line: 38
+    Info (12023): Found entity 1: baseline_c5gx File: /home/rozenn/TP_FPGA/TP4/baseline_c5gx.v Line: 38
 Info (12021): Found 2 design units, including 1 entities, in source file clock_idle.vhd
-    Info (12022): Found design unit 1: clock_idle-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/clock_idle.vhd Line: 12
-    Info (12023): Found entity 1: clock_idle File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/clock_idle.vhd Line: 5
+    Info (12022): Found design unit 1: clock_idle-behavioral File: /home/rozenn/TP_FPGA/TP4/clock_idle.vhd Line: 12
+    Info (12023): Found entity 1: clock_idle File: /home/rozenn/TP_FPGA/TP4/clock_idle.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tb_clock_idle.vhd
-    Info (12022): Found design unit 1: tb_clock_idle-tb File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/tb_clock_idle.vhd Line: 8
-    Info (12023): Found entity 1: tb_clock_idle File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/tb_clock_idle.vhd Line: 5
+    Info (12022): Found design unit 1: tb_clock_idle-tb File: /home/rozenn/TP_FPGA/TP4/tb_clock_idle.vhd Line: 8
+    Info (12023): Found entity 1: tb_clock_idle File: /home/rozenn/TP_FPGA/TP4/tb_clock_idle.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file writing_code.vhd
-    Info (12022): Found design unit 1: writing_code-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/writing_code.vhd Line: 13
-    Info (12023): Found entity 1: writing_code File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/writing_code.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file top_level.vhd
-    Info (12022): Found design unit 1: top_level-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/top_level.vhd Line: 17
-    Info (12023): Found entity 1: top_level File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/top_level.vhd Line: 5
+    Info (12022): Found design unit 1: writing_code-behavioral File: /home/rozenn/TP_FPGA/TP4/writing_code.vhd Line: 13
+    Info (12023): Found entity 1: writing_code File: /home/rozenn/TP_FPGA/TP4/writing_code.vhd Line: 5
+Warning (12019): Can't analyze file -- file top_level.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file tb_writing_code.vhd
-    Info (12022): Found design unit 1: tb_writing_code-tb File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/tb_writing_code.vhd Line: 8
-    Info (12023): Found entity 1: tb_writing_code File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/tb_writing_code.vhd Line: 5
+    Info (12022): Found design unit 1: tb_writing_code-tb File: /home/rozenn/TP_FPGA/TP4/tb_writing_code.vhd Line: 8
+    Info (12023): Found entity 1: tb_writing_code File: /home/rozenn/TP_FPGA/TP4/tb_writing_code.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file open_state.vhd
-    Info (12022): Found design unit 1: open_state-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 16
-    Info (12023): Found entity 1: open_state File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 5
+    Info (12022): Found design unit 1: open_state-behavioral File: /home/rozenn/TP_FPGA/TP4/open_state.vhd Line: 16
+    Info (12023): Found entity 1: open_state File: /home/rozenn/TP_FPGA/TP4/open_state.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file chenillard.vhd
-    Info (12022): Found design unit 1: chenillard-behavioral File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/chenillard.vhd Line: 12
-    Info (12023): Found entity 1: chenillard File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/chenillard.vhd Line: 5
-Info (12127): Elaborating entity "open_state" for the top level hierarchy
-Info (12128): Elaborating entity "chenillard" for hierarchy "chenillard:writing_code_inst" File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 18
+    Info (12022): Found design unit 1: chenillard-behavioral File: /home/rozenn/TP_FPGA/TP4/chenillard.vhd Line: 12
+    Info (12023): Found entity 1: chenillard File: /home/rozenn/TP_FPGA/TP4/chenillard.vhd Line: 5
+Info (12127): Elaborating entity "error_state" for the top level hierarchy
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:UUT_divider" File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 21
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hex0[0]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex0[1]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex0[2]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex0[3]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex0[4]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex0[5]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex0[6]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 8
-    Warning (13410): Pin "hex1[0]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex1[1]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex1[2]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex1[3]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex1[4]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex1[5]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex1[6]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 9
-    Warning (13410): Pin "hex2[0]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex2[1]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex2[2]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex2[3]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex2[4]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex2[5]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex2[6]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 10
-    Warning (13410): Pin "hex3[0]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-    Warning (13410): Pin "hex3[1]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-    Warning (13410): Pin "hex3[2]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-    Warning (13410): Pin "hex3[3]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-    Warning (13410): Pin "hex3[4]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-    Warning (13410): Pin "hex3[5]" is stuck at GND File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-    Warning (13410): Pin "hex3[6]" is stuck at VCC File: C:/users/eloiseleblanc/Desktop/Workspace/TP_FPGA/TP4/open_state.vhd Line: 11
-Info (286030): Timing-Driven Synthesis is running
+    Warning (13410): Pin "hex0[0]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex0[1]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex0[2]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex0[3]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex0[4]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex0[5]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex0[6]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 8
+    Warning (13410): Pin "hex1[0]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex1[1]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex1[2]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex1[3]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex1[4]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex1[5]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex1[6]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 9
+    Warning (13410): Pin "hex2[0]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex2[1]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex2[2]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex2[3]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex2[4]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex2[5]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex2[6]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 10
+    Warning (13410): Pin "hex3[0]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "hex3[1]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "hex3[2]" is stuck at VCC File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "hex3[3]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "hex3[4]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "hex3[5]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "hex3[6]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 11
+    Warning (13410): Pin "ledr[0]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[1]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[2]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[3]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[4]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[5]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[6]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[7]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[8]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+    Warning (13410): Pin "ledr[9]" is stuck at GND File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 12
+Info (17049): 24 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 49 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50_B6A" File: /home/rozenn/TP_FPGA/TP4/error_state.vhd Line: 7
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 36 output pins
-    Info (21061): Implemented 12 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 771 megabytes
-    Info: Processing ended: Wed May  7 11:19:38 2025
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21059): Implemented 38 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 478 megabytes
+    Info: Processing ended: Wed May  7 11:54:03 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 

@@ -1,5 +1,5 @@
 Flow report for lockey
-Wed May  7 11:19:38 2025
+Wed May  7 11:54:30 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -41,25 +41,25 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Wed May  7 11:19:38 2025           ;
+; Flow Status                     ; Successful - Wed May  7 11:54:30 2025           ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                   ; lockey                                          ;
-; Top-level Entity Name           ; open_state                                      ;
+; Top-level Entity Name           ; error_state                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CGXFC5C6F27C7                                  ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 4                                               ;
-; Total pins                      ; 37                                              ;
+; Logic utilization (in ALMs)     ; 1 / 29,080 ( < 1 % )                            ;
+; Total registers                 ; 0                                               ;
+; Total pins                      ; 39 / 364 ( 11 % )                               ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
+; Total block memory bits         ; 0 / 4,567,040 ( 0 % )                           ;
+; Total DSP Blocks                ; 0 / 150 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                                   ;
+; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                                   ;
+; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                                   ;
+; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                                   ;
+; Total PLLs                      ; 0 / 12 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
 +---------------------------------+-------------------------------------------------+
 
 
@@ -68,7 +68,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/07/2025 11:19:24 ;
+; Start date & time ; 05/07/2025 11:53:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lockey              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ on the Quartus Prime software download page.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 169450176816182.174660956400856        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 35315502940563.174661163845901         ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_writing_code                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_clock_idle                     ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
@@ -106,13 +106,13 @@ on the Quartus Prime software download page.
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS       ; Half Signal Swing                      ; --            ; --          ; --                                ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                             ; --            ; --          ; --                                ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS      ; Half Vccio                             ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; open_state  ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; open_state  ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; open_state  ; Top                               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; error_state ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; error_state ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; error_state ; Top                               ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; open_state                             ; lockey        ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; error_state                            ; lockey        ; --          ; --                                ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -121,24 +121,36 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 771 MB              ; 00:00:02                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 478 MB              ; 00:00:12                           ;
+; Fitter               ; 00:00:14     ; 1.0                     ; 1598 MB             ; 00:00:21                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 507 MB              ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 784 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 659 MB              ; 00:00:00                           ;
+; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:41                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                         ;
-+----------------------+-----------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname      ; OS Name    ; OS Version ; Processor type ;
-+----------------------+-----------------------+------------+------------+----------------+
-; Analysis & Synthesis ; macbook-pro-de-eloise ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+-----------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                           ;
++----------------------+--------------------------------------------+---------+------------+----------------+
+; Module Name          ; Machine Hostname                           ; OS Name ; OS Version ; Processor type ;
++----------------------+--------------------------------------------+---------+------------+----------------+
+; Analysis & Synthesis ; rozenn-Vivobook-ASUSLaptop-X7600PC-N7600PC ; Ubuntu  ; 24         ; x86_64         ;
+; Fitter               ; rozenn-Vivobook-ASUSLaptop-X7600PC-N7600PC ; Ubuntu  ; 24         ; x86_64         ;
+; Assembler            ; rozenn-Vivobook-ASUSLaptop-X7600PC-N7600PC ; Ubuntu  ; 24         ; x86_64         ;
+; Timing Analyzer      ; rozenn-Vivobook-ASUSLaptop-X7600PC-N7600PC ; Ubuntu  ; 24         ; x86_64         ;
+; EDA Netlist Writer   ; rozenn-Vivobook-ASUSLaptop-X7600PC-N7600PC ; Ubuntu  ; 24         ; x86_64         ;
++----------------------+--------------------------------------------+---------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off lock -c lockey
+quartus_fit --read_settings_files=off --write_settings_files=off lock -c lockey
+quartus_asm --read_settings_files=off --write_settings_files=off lock -c lockey
+quartus_sta lock -c lockey
+quartus_eda --read_settings_files=off --write_settings_files=off lock -c lockey
 
 
 

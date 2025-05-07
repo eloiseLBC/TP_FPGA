@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC5C6F27C7
-set_global_assignment -name TOP_LEVEL_ENTITY open_state
+set_global_assignment -name TOP_LEVEL_ENTITY error_state
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "TUE JUN  4 20:41:15 2013"
 set_global_assignment -name LAST_QUARTUS_VERSION "24.1std.0 Lite Edition"
@@ -424,19 +424,22 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tb_clock_idle -section_id eda_si
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_clock_idle
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1000 ns" -section_id tb_clock_idle
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_clock_idle -section_id tb_clock_idle
-set_global_assignment -name VHDL_FILE lockey_toplevel.vhd
-set_global_assignment -name VERILOG_FILE baseline_c5gx.v
-set_global_assignment -name VHDL_FILE clock_idle.vhd
-set_global_assignment -name VHDL_FILE tb_clock_idle.vhd
-set_global_assignment -name VHDL_FILE writing_code.vhd
-set_global_assignment -name VHDL_FILE top_level.vhd
-set_global_assignment -name VHDL_FILE tb_writing_code.vhd
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_clock_idle.vhd -section_id tb_clock_idle
 set_global_assignment -name EDA_TEST_BENCH_NAME tb_writing_code -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_writing_code
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id tb_writing_code
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_writing_code -section_id tb_writing_code
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_writing_code.vhd -section_id tb_writing_code
+set_global_assignment -name VHDL_FILE clock_divider.vhd
+set_global_assignment -name VHDL_FILE enter_digits_state.vhd
+set_global_assignment -name VHDL_FILE error_state.vhd
+set_global_assignment -name VHDL_FILE idle_state.vhd
+set_global_assignment -name VERILOG_FILE baseline_c5gx.v
+set_global_assignment -name VHDL_FILE clock_idle.vhd
+set_global_assignment -name VHDL_FILE tb_clock_idle.vhd
+set_global_assignment -name VHDL_FILE writing_code.vhd
+set_global_assignment -name VHDL_FILE top_level.vhd
+set_global_assignment -name VHDL_FILE tb_writing_code.vhd
 set_global_assignment -name VHDL_FILE open_state.vhd
 set_global_assignment -name VHDL_FILE chenillard.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top

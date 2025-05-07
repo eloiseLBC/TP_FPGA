@@ -2,9 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity open_state is 
+entity error_state is 
 	port(
-		clock : in std_logic;
+		CLOCK_50_B6A : in std_logic; 
 		hex0 : out std_logic_vector(6 downto 0);
 		hex1 : out std_logic_vector(6 downto 0);
 		hex2 : out std_logic_vector(6 downto 0);
@@ -13,20 +13,23 @@ entity open_state is
 	);
 end entity;
 
-architecture behavioral of open_state is 
-	constant MAX_COUNT : unsigned(3 downto 0) := to_unsigned(250_000, 26);
+architecture behavioral of error_state is 
 	signal counter     : unsigned(25 downto 0) := (others => '0');
-	signal led_state   : std_logic_vector(9 down to 0) := (others => '0');
+	signal led_state   : std_logic_vector(9 downto 0) := (others => '0');
+	signal clock: std_logic;
 begin
+	UUT_divider : entity work.clock_divider
+		port map(
+			CLKin  => CLOCK_50_B6A,
+			N      => "10100", -- Sélection du rythme de division
+			CLKout => clock
+		);
+
+
 	process(clock)
 	begin
 		if rising_edge(clock) then
-			if counter = MAX_COUNT then
-				counter   <= (others => '0');
 				led_state <= not led_state;
-			else
-				counter <= counter + 1;
-			end if;
 		end if;
 	end process;
 	
