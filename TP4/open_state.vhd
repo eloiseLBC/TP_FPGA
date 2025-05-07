@@ -14,15 +14,23 @@ entity open_state is
 end entity;
 
 architecture behavioral of open_state is 
+signal clock: std_logic;
 begin
-	writing_code_inst : entity work.chenillard
+	  UUT_divider : entity work.clock_divider
+		port map(
+			CLKin  => CLOCK_50_B6A,
+			N      => "10100", -- Sélection du rythme de division
+			CLKout => clock
+		);
+
+	chenillard_inst : entity work.chenillard
         port map (
-				CLK           => CLOCK_50_B6A,
+				CLK           => clock,
             CHEN  => ledg
         );
 	-- Affichage de "OPEN"
-    hex0 <= "0010111"; 
-    hex1 <= "0001100";
-    hex2 <= "0011000";
+    hex0 <= "0101011"; 
+    hex1 <= "0000110";
+    hex2 <= "0001100";
     hex3 <= "1000000";
 end architecture;

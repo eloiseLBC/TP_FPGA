@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity lockey_toplevel is
+entity idle_state is
     port (
         CLOCK_50_B6A : in  std_logic;               -- Horloge principale 50 MHz de la carte
         LEDR        : out std_logic_vector(7 downto 0)  -- LEDs vertes
     );
 end entity;
 
-architecture behavioral of lockey_toplevel is
+architecture behavioral of idle_state is
     signal led_out : std_logic;
 begin
 
