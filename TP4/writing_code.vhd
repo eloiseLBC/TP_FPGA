@@ -13,21 +13,22 @@ architecture behavioral of writing_code is
 begin
 	process(writing_bites)
 	begin
-	writen_bites <= (others => '0'); -- défaut à 0
-	
-	if writing_bites(0) = '1' then -- si le 1er bit est à l'état haut
-		writen_bites(0) <= '1'; -- le 1er bit de sortie est à l'état haut
-	end if;
-	
-	if writing_bites(1) = '1' then
-		writen_bites(1) <= '1';
-	end if;
-	
-	if writing_bites(2) = '1' then
-		writen_bites(2) <= '1';
-	end if;
-	
-	if writing_bites(3) = '1' then
-		writen_bites(3) <= '1';
-	end if;
+		writen_bites <= (others => '0'); -- défaut à 0
+		
+		if writing_bites(0) = '1' then -- si le 1er bit est à l'état haut
+			writen_bites(0) <= '1'; -- le 1er bit de sortie est à l'état haut
+		end if;
+		
+		if writing_bites(1) = '1' then
+			writen_bites(1) <= '1';
+		end if;
+		
+		if writing_bites(2) = '1' then
+			writen_bites(2) <= '1';
+		end if;
+		
+		if writing_bites(3) = '1' then
+			writen_bites(3) <= '1';
+		end if;
+	end process;
 end architecture;

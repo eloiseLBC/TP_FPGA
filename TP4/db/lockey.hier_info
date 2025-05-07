@@ -1,31 +1,46 @@
-|clock_idle
-clock => led_state.CLK
-clock => counter[0].CLK
-clock => counter[1].CLK
-clock => counter[2].CLK
-clock => counter[3].CLK
-clock => counter[4].CLK
-clock => counter[5].CLK
-clock => counter[6].CLK
-clock => counter[7].CLK
-clock => counter[8].CLK
-clock => counter[9].CLK
-clock => counter[10].CLK
-clock => counter[11].CLK
-clock => counter[12].CLK
-clock => counter[13].CLK
-clock => counter[14].CLK
-clock => counter[15].CLK
-clock => counter[16].CLK
-clock => counter[17].CLK
-clock => counter[18].CLK
-clock => counter[19].CLK
-clock => counter[20].CLK
-clock => counter[21].CLK
-clock => counter[22].CLK
-clock => counter[23].CLK
-clock => counter[24].CLK
-clock => counter[25].CLK
-led <= led_state.DB_MAX_OUTPUT_PORT_TYPE
+|top_level
+KEY[0] => writing_code:writing_code_inst.writing_bites[0]
+KEY[1] => writing_code:writing_code_inst.writing_bites[1]
+KEY[2] => writing_code:writing_code_inst.writing_bites[2]
+KEY[3] => writing_code:writing_code_inst.writing_bites[3]
+HEX0[0] <= <VCC>
+HEX0[1] <= <VCC>
+HEX0[2] <= <VCC>
+HEX0[3] <= <VCC>
+HEX0[4] <= <VCC>
+HEX0[5] <= <VCC>
+HEX0[6] <= writing_code:writing_code_inst.writen_bites[0]
+HEX1[0] <= <VCC>
+HEX1[1] <= <VCC>
+HEX1[2] <= <VCC>
+HEX1[3] <= <VCC>
+HEX1[4] <= <VCC>
+HEX1[5] <= <VCC>
+HEX1[6] <= writing_code:writing_code_inst.writen_bites[1]
+HEX2[0] <= <VCC>
+HEX2[1] <= <VCC>
+HEX2[2] <= <VCC>
+HEX2[3] <= <VCC>
+HEX2[4] <= <VCC>
+HEX2[5] <= <VCC>
+HEX2[6] <= writing_code:writing_code_inst.writen_bites[2]
+HEX3[0] <= <VCC>
+HEX3[1] <= <VCC>
+HEX3[2] <= <VCC>
+HEX3[3] <= <VCC>
+HEX3[4] <= <VCC>
+HEX3[5] <= <VCC>
+HEX3[6] <= writing_code:writing_code_inst.writen_bites[3]
+
+
+|top_level|writing_code:writing_code_inst
+writing_bites[0] => writen_bites[0].DATAIN
+writing_bites[1] => writen_bites[1].DATAIN
+writing_bites[2] => writen_bites[2].DATAIN
+writing_bites[3] => writen_bites[3].DATAIN
+writen_bites[0] <= writing_bites[0].DB_MAX_OUTPUT_PORT_TYPE
+writen_bites[1] <= writing_bites[1].DB_MAX_OUTPUT_PORT_TYPE
+writen_bites[2] <= writing_bites[2].DB_MAX_OUTPUT_PORT_TYPE
+writen_bites[3] <= writing_bites[3].DB_MAX_OUTPUT_PORT_TYPE
 
 

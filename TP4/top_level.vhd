@@ -2,17 +2,18 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity toplevel is 
+entity top_level is 
 	port(
 		KEY  : in std_logic_vector(3 downto 0);
+		HEX0 : out std_logic_vector(6 downto 0);
 		HEX1 : out std_logic_vector(6 downto 0);
 		HEX2 : out std_logic_vector(6 downto 0);
-		HEX3 : out std_logic_vector(6 downto 0);
-		HEX4 : out std_logic_vector(6 downto 0)
+		HEX3 : out std_logic_vector(6 downto 0)
+		
 	);
 end entity;
 
-architecture behavioral of toplevel is
+architecture behavioral of top_level is
     signal writen_bites : std_logic_vector(3 downto 0);
 begin
 
